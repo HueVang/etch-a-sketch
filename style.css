@@ -12,13 +12,13 @@ h1 {
 	margin-top: 3em;
 }
 
-.my_hover {
+/*.my_hover {
 	background-color: blue;
-}
+}*/
 
 .square {
-	height: 2rem;
-	width: 2rem;
+	height: 1.5em;
+	width: 1.5em;
 	/*background-color: gray;*/
 	display: inline-block;
 	border: 1px gray solid;
@@ -26,8 +26,8 @@ h1 {
 };
 
 .square2 {
-	height: 2rem;
-	width: 2rem;
+	height: 1.5em;
+	width: 1.5em;
 	/*background-color: gray;*/
 	border-style: solid;
 	clear: both;

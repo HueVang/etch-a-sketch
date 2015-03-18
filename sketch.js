@@ -1,9 +1,9 @@
 $(document).ready(function() {
 
 	function grid() {
-		alert('Making grid...');
+		//alert('Making grid...');
 		for (var i = 0; i < 256; i++) {
-			if(i % 16 == 0) {
+			if(i % 17 == 0) {
 				$("#container").append("<div class='square2'></div>");
 			}
 			else {
@@ -13,11 +13,20 @@ $(document).ready(function() {
 	};
 
 	function hover() {
-	$(".square").hover (
+		$(".square").hover (
 		function() {
-			$(this).addClass("my_hover");
+			$(this).css("background-color", 'blue');
 		});
-	}
+	};
+
+	function multi_hover() {
+		$(".square").hover (
+		function() {
+			var hue = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
+			$(this).css("background-color", hue);
+		});
+	};
+
 
 	grid();
 	hover();
@@ -28,5 +37,17 @@ $(document).ready(function() {
 		hover();
 	});
 
+	$("#disco").click(function() {
+		$(".square").each(function() {
+			var hue = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
+			$(this).css("background-color", hue)
+			}		
+		);
+		hover();
+	});
 
-})
+	$("#multi").click(function() {
+		multi_hover();
+	});
+
+});
