@@ -20,7 +20,8 @@ $(document).ready(function() {
 	};
 
 	function multi_hover() {
-		$(".square").hover (
+		$(".square").unbind();
+		$(".square").mouseenter (
 		function() {
 			var hue = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
 			$(this).css("background-color", hue);
@@ -48,6 +49,15 @@ $(document).ready(function() {
 
 	$("#multi").click(function() {
 		multi_hover();
+	});
+
+	$("#snake").click(function() {
+		$(".square").unbind();
+		$(".square").hover(function() {
+			$(this).css("opacity", 0);
+		}, function () {
+			$(this).fadeTo(1500, 1);
+		});
 	});
 
 });
